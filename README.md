@@ -1,9 +1,15 @@
 Nowoczesna aplikacja typu marketplace, która wykorzystuje trzy różne typy baz danych (dokumentową, grafową i relacyjną), każdą dokładnie tam, gdzie sprawdza się najlepiej.
+
 ✅ Architektura mikroserwisowa
+
 ✅ Osobne bazy danych: PostgreSQL, MongoDB, Neo4j
+
 ✅ Zewnętrzny Spring Cloud Config Server z GitHuba
+
 ✅ Zasady Clean Architecture i SOLID
+
 ✅ Gotowa pod CI/CD, Dockera, bezpieczeństwo (np. Keycloak)
+
 Krótkie założenia:
 Użytkownicy mogą:
 
