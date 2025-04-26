@@ -2,6 +2,7 @@ package pl.niziolekp.app.userservice.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
@@ -23,11 +24,11 @@ public class SecurityConfig {
                         .requestMatchers("/for-user").hasAnyAuthority("user-role")
                         .requestMatchers("/for-admin").hasAnyAuthority("admin-role")
                         .anyRequest().authenticated()
-                )
-                .oauth2ResourceServer(oauth2 ->
+                ).oauth2Login(Customizer.withDefaults());
+                /*.oauth2ResourceServer(oauth2 ->
                         oauth2
                                 .jwt(jwt -> jwt
-                                        .jwtAuthenticationConverter(jwtAuthenticationConverter)));
+                                        .jwtAuthenticationConverter(jwtAuthenticationConverter)));*/
         return httpSecurity.build();
     }
   //z realma pobierane role
